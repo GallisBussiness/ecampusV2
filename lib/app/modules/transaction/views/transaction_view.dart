@@ -1,5 +1,4 @@
 import 'package:ecampusv2/app/modules/transaction/operation_model.dart';
-import 'package:ecampusv2/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -52,15 +51,6 @@ class TransactionView extends GetView<TransactionController> {
             ),
           ),
         ),
-        Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Get.toNamed(Routes.ALLTRANSACTIONS);
-                },
-                child: const Text(
-                  'Toutes les Transactions ->',
-                  style: TextStyle(color: Colors.white),
-                )))
       ],
     );
   }

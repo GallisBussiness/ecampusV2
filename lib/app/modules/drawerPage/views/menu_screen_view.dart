@@ -43,15 +43,6 @@ class MenuScreenView extends GetView<DrawerPageController> {
               onTap: () {}),
           const Divider(height: 4, color: Colors.brown),
           ListTile(
-              title: const Text(
-                'Transferer du credit',
-                style: TextStyle(fontSize: 16, color: Colors.white),
-              ),
-              leading: const Icon(Icons.send, color: Colors.white),
-              trailing: const Icon(Icons.arrow_right, color: Colors.white),
-              onTap: () {}),
-          const Divider(height: 4, color: Colors.brown),
-          ListTile(
             title: const Text(
               'Se déconnecter',
               style: TextStyle(fontSize: 16, color: Colors.white),
