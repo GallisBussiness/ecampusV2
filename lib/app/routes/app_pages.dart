@@ -10,6 +10,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/qrpage/bindings/qrpage_binding.dart';
+import '../modules/qrpage/views/qrpage_view.dart';
 import '../modules/qrscan/bindings/qrscan_binding.dart';
 import '../modules/qrscan/views/qrscan_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.ASSISTANCE,
       page: () => const AssistanceView(),
       binding: AssistanceBinding(),
+    ),
+    GetPage(
+      name: _Paths.QRPAGE,
+      page: () => const QrpageView(),
+      binding: QrpageBinding(),
     ),
   ];
 }

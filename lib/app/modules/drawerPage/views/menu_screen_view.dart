@@ -19,7 +19,7 @@ class MenuScreenView extends GetView<DrawerPageController> {
           CircleAvatar(
             radius: 60,
             foregroundImage: NetworkImage(
-                '$backUrl/${controller.currentCompte.etudiant?.avatar}'),
+                '$profilUrl/${controller.currentCompte.etudiant?.avatar}'),
           ),
           ListTile(
             title: const Text(

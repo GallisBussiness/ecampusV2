@@ -13,6 +13,7 @@ abstract class Routes {
   static const DRAWER = _Paths.DRAWER;
   static const DRAWER_PAGE = _Paths.DRAWER_PAGE;
   static const ASSISTANCE = _Paths.ASSISTANCE;
+  static const QRPAGE = _Paths.QRPAGE;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const DRAWER = '/drawer';
   static const DRAWER_PAGE = '/drawer-page';
   static const ASSISTANCE = '/assistance';
+  static const QRPAGE = '/qrpage';
 }

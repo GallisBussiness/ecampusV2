@@ -1,5 +1,7 @@
 import 'package:ecampusv2/app/data/models/compte_model.dart';
+import 'package:ecampusv2/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QrSection extends StatelessWidget {
@@ -22,12 +24,17 @@ class QrSection extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Hero(
-              tag: "qr_code",
-              child: QrImageView(
-                data: compte.code!,
-                version: QrVersions.auto,
-                size: 200.0,
+            child: InkWell(
+              onTap: () {
+                Get.toNamed(Routes.QRPAGE);
+              },
+              child: Hero(
+                tag: "qr_code",
+                child: QrImageView(
+                  data: compte.code!,
+                  version: QrVersions.auto,
+                  size: 200.0,
+                ),
               ),
             ),
           )),

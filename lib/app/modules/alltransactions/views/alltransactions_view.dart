@@ -55,7 +55,8 @@ class AlltransactionsView extends GetView<AlltransactionsController> {
                   );
                 }),
             onLoading: const Center(child: CircularProgressIndicator()),
-            onError: null,
+            onError: (err) =>
+                const Image(image: AssetImage("assets/empty.png")),
           ),
         ),
       ),
