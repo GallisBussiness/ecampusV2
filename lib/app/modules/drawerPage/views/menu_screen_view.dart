@@ -40,7 +40,9 @@ class MenuScreenView extends GetView<DrawerPageController> {
               ),
               leading: const Icon(Icons.edit, color: Colors.white),
               trailing: const Icon(Icons.arrow_right, color: Colors.white),
-              onTap: () {}),
+              onTap: () {
+                Get.toNamed(Routes.PASSWORD_UPDATE);
+              }),
           const Divider(height: 4, color: Colors.brown),
           ListTile(
             title: const Text(

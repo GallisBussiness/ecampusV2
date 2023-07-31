@@ -20,6 +20,7 @@ dependencies:
   liquid_pull_to_refresh: ^3.0.1
   flutter_native_splash: ^2.3.1
   flutter_speed_dial: ^7.0.0
+  pinput: ^2.2.31
   flutter: 
     sdk: flutter
   flutter_zoom_drawer: ^3.1.1

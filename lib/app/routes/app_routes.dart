@@ -14,6 +14,7 @@ abstract class Routes {
   static const DRAWER_PAGE = _Paths.DRAWER_PAGE;
   static const ASSISTANCE = _Paths.ASSISTANCE;
   static const QRPAGE = _Paths.QRPAGE;
+  static const PASSWORD_UPDATE = _Paths.PASSWORD_UPDATE;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const DRAWER_PAGE = '/drawer-page';
   static const ASSISTANCE = '/assistance';
   static const QRPAGE = '/qrpage';
+  static const PASSWORD_UPDATE = '/password-update';
 }

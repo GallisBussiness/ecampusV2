@@ -36,5 +36,8 @@ class LoginController extends GetxController with Validations {
   @override
   void onClose() {
     super.onClose();
+    code.close();
+    password.close();
+    isLoading.close();
   }
 }

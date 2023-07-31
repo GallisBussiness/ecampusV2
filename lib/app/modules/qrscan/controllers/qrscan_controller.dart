@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getwidget/getwidget.dart';
+import 'package:pinput/pinput.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QrscanController extends GetxController {
@@ -11,6 +11,29 @@ class QrscanController extends GetxController {
   QRViewController? controller;
 
   void onQRViewCreated(QRViewController controller) {
+    final defaultPinTheme = PinTheme(
+      width: 48,
+      height: 48,
+      textStyle: const TextStyle(
+          fontSize: 20,
+          color: Color.fromRGBO(30, 60, 87, 1),
+          fontWeight: FontWeight.w600),
+      decoration: BoxDecoration(
+        border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1)),
+        borderRadius: BorderRadius.circular(20),
+      ),
+    );
+
+    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
+      border: Border.all(color: const Color.fromRGBO(114, 178, 238, 1)),
+      borderRadius: BorderRadius.circular(8),
+    );
+
+    final submittedPinTheme = defaultPinTheme.copyWith(
+      decoration: defaultPinTheme.decoration!.copyWith(
+        color: const Color.fromRGBO(234, 239, 243, 1),
+      ),
+    );
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) async {
       result = scanData.code;
@@ -22,20 +45,25 @@ class QrscanController extends GetxController {
               const SizedBox(
                 height: 50,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GFTextFieldRounded(
-                    cornerradius: 5,
-                    onFieldSubmitted: (value) {
-                      Get.back(result: value);
-                    },
-                    editingbordercolor: Colors.brown,
-                    idlebordercolor: Colors.lightBlue,
-                    borderwidth: 2,
-                    autofocus: true,
-                    obscureText: true,
-                    backgroundcolor: Colors.white,
-                    hintText: "Entrer votre mot de passe"),
+              const Text(
+                "ENTRER VOTRE CODE SECRET",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Pinput(
+                length: 6,
+                autofocus: true,
+                defaultPinTheme: defaultPinTheme,
+                focusedPinTheme: focusedPinTheme,
+                submittedPinTheme: submittedPinTheme,
+                onCompleted: (pin) {
+                  Get.back(result: pin);
+                },
               ),
               const SizedBox(
                 height: 10,
